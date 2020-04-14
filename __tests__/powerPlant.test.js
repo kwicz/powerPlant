@@ -1,23 +1,15 @@
-import { changePlantState } from './../src/powerPlant.js';
+import { hydrate, feed, giveLight, giveBug } from './../src/powerPlant.js';
 
 describe('Plant', () => {
 
-  test('should correctly adjust the hydration of the plant, () => {
-    var plant = new plant(2,4,5);
-    expect(triangle.side1).toEqual(2);
-    expect(triangle.side2).toEqual(4);
-    expect(triangle.side3).toEqual(5);
+  test('should correctly adjust the hydration of the plant', () => {
+    // Arrange
+    let flower = { soil: 0, light: 0, water: 0 }
+
+    // Act
+    const newFlower = hydrate(1)(flower);
+
+    // Assert
+    expect(newFlower.water).toEqual(1);
   });
-  // test('should correctly determine whether three lengths are not a triangle', () => {
-  //   var notTriangle = new Triangle(3,9,22);
-  //   expect(notTriangle.checkType()).toEqual("not a triangle");
-  // });
-  // test('should correctly determine whether three lengths make a scalene triangle', function() {
-  //   var scalTriangle = new Triangle(4,5,7)
-  //   expect(scalTriangle.checkType()).toEqual("scalene triangle");
-  // });
-  // test('should correctly determine whether three lengths make an isosceles triangle', () => {
-	//   var isocTriangle = new Triangle(5,5,7)
-	//   expect(isocTriangle.checkType()).toEqual("isosceles triangle");
-  // });
 });

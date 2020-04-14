@@ -19,7 +19,7 @@
 // }
 
 //function factories for the above
-const changePlantState = (plant, property) => {
+export const changePlantState = (plant, property) => {
   return {
     ...plant, 
     [property]: (plant[property] || 0) + 1
@@ -29,7 +29,8 @@ const changePlantState = (plant, property) => {
 let plant = { soil: 0, light: 0, water: 0 }
 changePlantState(plant, "soil")
 
-const changeState = (prop) => {
+
+export const changeState = (prop) => {
   return (value) => {
     return (state) => ({
       ...state,
@@ -37,3 +38,7 @@ const changeState = (prop) => {
     })
   }
 }
+export const feed = changeState("soil");
+export const hydrate = changeState("water");
+export const giveLight = changeState("light");
+export const giveBug = changeState("bug");
