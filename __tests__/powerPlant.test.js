@@ -25,9 +25,10 @@ describe('Plant', () => {
     const neglectedFlower = hydrate(-4)(buggedOutFlower);
 
     // Assert
-    expect(neglectedFlower.water).toEqual(-3);
-    expect(neglectedFlower.soil).toEqual(1);
-    expect(neglectedFlower.light).toEqual(1);
-    expect(neglectedFlower.bug).toEqual(1);
+    expect(neglectedFlower).toEqual({water: -3, soil: 1, light: 1, bug: 1});
+    // expect(neglectedFlower.water).toEqual(-3);
+    // expect(neglectedFlower.soil).toEqual(1);
+    // expect(neglectedFlower.light).toEqual(11);
+    // expect(neglectedFlower.bug).toEqual(11);
   });
 });
