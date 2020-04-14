@@ -4,7 +4,8 @@ describe('Plant', () => {
 
   test('should correctly adjust the hydration of the plant', () => {
     // Arrange
-    let flower = { soil: 0, light: 0, water: 0 }
+    const initialState = { soil: 0, light: 0, water: 0 };
+    const flower = storeState(initialState);
 
     // Act
     const newFlower = hydrate(1)(flower);
@@ -15,7 +16,8 @@ describe('Plant', () => {
 
   test('should correctly adjust all properties of the plant', () => {
     // Arrange
-    let flower = { soil: 0, light: 0, water: 0 }
+    const initialState = { soil: 0, light: 0, water: 0 }
+    const flower = storeState(initialState)
 
     // Act
     const hydratedFlower = hydrate(1)(flower);
@@ -30,15 +32,13 @@ describe('Plant', () => {
 
   test('should show current state being set equal to new state', () => {
     // Arrange
-    let initialState = { soil: 0, light: 0, water: 0 };
+    const initialState = { soil: 0, light: 0, water: 0 };
     const flower = storeState(initialState);
 
     // Act
     const happyFlower = flower(bestWater);
-    // const happyFlower = bestWater(flower);
-    console.log()
     
     // Assert
     expect(happyFlower.water).toEqual(3);
   });
-  })
+})
