@@ -1,23 +1,3 @@
-// // raw methods
-// const hydrate = (plant) => {
-//   return {
-//     ...plant,
-//     water: (plant.water || 0) + 1
-//   }
-// };
-// const feed = (plant) => {
-//   return {
-//     ...plant,
-//     soil: (plant.soil || 0) + 1
-//   }
-// };
-// const light = (plant) => {
-//   return {
-//     ...plant,
-//     sun: (plant.sun || 0) + 1
-//   }
-// }
-
 //function factories for the above
 export const changePlantState = (plant, property) => {
   return {
@@ -38,7 +18,45 @@ export const changeState = (prop) => {
     })
   }
 }
+
 export const feed = changeState("soil");
 export const hydrate = changeState("water");
 export const giveLight = changeState("light");
 export const giveBug = changeState("bug");
+
+const bestWater = hydrate(3);
+
+
+const storeState = () => {
+  let currentState = {}
+  return (stateChangeFunction) => {
+    const newState = stateChangeFunction(currentState)
+    currentState = {...newState}
+    return newState //why not current state?
+  }
+}
+
+const stateChanger = storeState();
+
+const wateredPlant = stateChanger(bestWater);
+
+// ------------------------------------------------- N O T E S ----------------
+// // raw methods
+// const hydrate = (plant) => {
+//   return {
+//     ...plant,
+//     water: (plant.water || 0) + 1
+//   }
+// };
+// const feed = (plant) => {
+//   return {
+//     ...plant,
+//     soil: (plant.soil || 0) + 1
+//   }
+// };
+// const light = (plant) => {
+//   return {
+//     ...plant,
+//     sun: (plant.sun || 0) + 1
+//   }                                                            
+// }
