@@ -1,4 +1,4 @@
-import { hydrate, feed, giveLight, giveBug } from './../src/powerPlant.js';
+import { hydrate, feed, giveLight, giveBug, storeState, bestWater } from './../src/powerPlant.js';
 
 describe('Plant', () => {
 
@@ -27,4 +27,18 @@ describe('Plant', () => {
     // Assert
     expect(neglectedFlower).toEqual({water: -3, soil: 1, light: 1, bug: 1});
   });
-});
+
+  test('should show current state being set equal to new state', () => {
+    // Arrange
+    let initialState = { soil: 0, light: 0, water: 0 };
+    const flower = storeState(initialState);
+
+    // Act
+    const happyFlower = flower(bestWater);
+    // const happyFlower = bestWater(flower);
+    console.log()
+    
+    // Assert
+    expect(happyFlower.water).toEqual(3);
+  });
+  })

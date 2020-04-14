@@ -24,11 +24,12 @@ export const hydrate = changeState("water");
 export const giveLight = changeState("light");
 export const giveBug = changeState("bug");
 
-const bestWater = hydrate(3);
+export const bestWater = hydrate(3);
 
+// let initialState = { soil: 0, light: 0, water: 0 };
 
-const storeState = () => {
-  let currentState = {}
+export const storeState = (initialState) => {
+  let currentState = initialState
   return (stateChangeFunction) => {
     const newState = stateChangeFunction(currentState)
     currentState = {...newState}
@@ -36,9 +37,9 @@ const storeState = () => {
   }
 }
 
-const stateChanger = storeState();
+// export const flower = storeState();
 
-const wateredPlant = stateChanger(bestWater);
+// const wateredPlant = flower(bestWater);
 
 // ------------------------------------------------- N O T E S ----------------
 // // raw methods
