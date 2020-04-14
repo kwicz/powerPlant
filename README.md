@@ -6,38 +6,6 @@ _An application to create growing plants using functional programming.
 
 #### By _**Keturah Howard, Alyssa Colistro, Mariam Alaeddin, K. Wicz**_
 
-## Preview
-
-![Landing Page Preview](landing-page.png)
-
-**[View Live Preview](https://admiring-hodgkin-6c8b1d.netlify.com/)**
-
-## Description
-
-Inspired by the Sci-Fi Trilogy _Remembrance of Earth's Past_ by Cixin Liu, this site allows users to plan for inter-solar system travel with the fictitious space travel organization, The Halo Group.  This Halo Group website will allow their customers to enter their age and how many years they plan to be cryogenically frozen to see how many years old they would be and the difference in their age and their estimated life expectancy on different planets that are part of a travel package.
-
-## Project Specifications
-
-|Behavior|Input|Output|
-|---|:---:|:---:|
-|User inputs age|--|error|
-||"twenty"|error|
-|User inputs age under 80|20|60 (years until estimated life expectancy)
-|User inputs age over 80|90|10 (years past estimated life expectancy)|
-|User inputs preferred cryogenically frozen years|20|est. life expectancy + 20|
-|User over 80 inputs preferred cryogenically frozen years|20|error|
-|User selects planet|Mercury|Earth age / .24|
-||20|Estimated total years left / .24|
-||90|Estimated years over / .24|
-|User selects planet|Venus|Earth age / .62|
-||20|Estimated total years left / .62|
-||90|Estimated years over / .62|
-|User selects planet|Mars|Earth age / 1.88|
-||20|Estimated total years left / 1.88|
-||90|Estimated years over / 1.88|
-|User selects planet|Jupiter|Earth age / 11.86|
-||20|Estimated total years left / 11.86|
-||90|Estimated years over / 11.86|
 
 ## Setup/Installation Requirements
 
@@ -72,7 +40,7 @@ _No known bugs at this time._
 
 ## Support and contact details
 
-_Have a bug or an issue with this application? [Open a new issue](https://github.com/kwicz/galactic-age-calculator/issues) here on GitHub._
+_Have a bug or an issue with this application? [Open a new issue](https://github.com/kwicz/powerPlant/issues) here on GitHub._
 
 ## Technologies Used
 
