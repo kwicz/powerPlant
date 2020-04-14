@@ -14,6 +14,8 @@ $(document).ready(function() {
     const updatedFlower = (flower(bestWater));
     $("#water-value").text(updatedFlower.water);
   });
+
+  //these dont work yet
   $("#water").click(function() {
     const updatedFlower = (flower(hydrate));
     $("#water-value").text(updatedFlower.water);
@@ -23,7 +25,11 @@ $(document).ready(function() {
     $("#soil-value").text(updatedFlower.soil);
   });
   $("#light").click(function() {
-    const updatedFlower = (flower(feed));
+    const updatedFlower = (flower(giveLight));
     $("#light-value").text(updatedFlower.light);
+  });
+  $("#bug").click(function() {
+    const updatedFlower = (flower(giveBug));
+    $("#bug-value").text(updatedFlower.bug);
   });
 });
